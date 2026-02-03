@@ -16,7 +16,7 @@ def calc_distance(data, city_tour):
 
 def seed_function(data):
     seed = [[], float("inf")]
-    sequence = random.sample(list(range(0, data.shape[0]), data.shape[0]), data.shape[0])
+    sequence = random.sample(range(data.shape[0]), data.shape[0])
     sequence.append(sequence[0])
     seed[0] = sequence
     seed[1] = calc_distance(data, seed)
@@ -77,7 +77,7 @@ def local_search_2_opt_simple(data, city_tour):
 
     return best
 
-def grasp(data, initial_tour, iterations=50, rcl_size=10, greediness=0.5):
+def grasp(data, initial_tour, iterations=50, rcl_size=10, greediness=0.8):
 
     best_solution = copy.deepcopy(initial_tour)
 
