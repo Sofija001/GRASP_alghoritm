@@ -32,7 +32,7 @@ nyc_coords = np.array([
 
 data = distance_matrix(nyc_coords, nyc_coords)
 seed = seed_function(data)
-best_tour = grasp(data, seed, iterations=10, rcl_size=3, greediness=0.5)
+best_tour = grasp(data, seed, iterations=10, rcl_size=3, greediness=0.8)
 
 print("Best tour:", best_tour[0])
 print("Distance:", best_tour[1])
