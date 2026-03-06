@@ -52,7 +52,7 @@ def local_search_2_opt_emergency(cost_matrix, config, reliability_penalty):
         for i in range(1, len(best[0]) - 2):
             for j in range(i + 1, len(best[0]) - 1):
                 candidate = copy.deepcopy(best)
-                #candidate[0][i:j] = reversed(candidate[0][i:j])
+                
                 candidate[0][i:j] = list(reversed(candidate[0][i:j]))
                 candidate[1] = communication_cost(cost_matrix, candidate, reliability_penalty)
 
